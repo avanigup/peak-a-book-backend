@@ -50,6 +50,7 @@ const passportJwt = (passport)=>{
 
 //import routes
 const UsersRoutes = require('./routes/UsersRoutes')
+const UserPostsRoutes = require('./routes/UserPostsRoutes')
 
 //create the server object
 const server = express();
@@ -97,6 +98,11 @@ mongoose.connect(
      UsersRoutes
  )
 
+ //route for user posts 
+ server.use(
+     '/feed',
+     UserPostsRoutes
+ )
 
 // //route for emails page
 // server.use(
